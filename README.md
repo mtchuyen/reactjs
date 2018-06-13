@@ -38,6 +38,7 @@ Trong React, chúng ta xây dựng trang web sử dụng những thành phần (
 ### JSX
 
 JSX là một dạng ngôn ngữ cho phép viết các mã HTML trong Javascript.
+
 ***Đặc điểm:***
 
 - Faster: Nhanh hơn.
@@ -91,5 +92,9 @@ reactjs cần đến 2 thằng file chính: "react" vs "react-dom". Và một tr
 </html>
 ```
 Khi chạy file này (mã html) bằng browser, đầu tiên sẽ xuất hiện đoạn text ***Hello, world!***, sau đó 1s hàm `setInterval` sẽ render lại content của page (thể hiện thời gian)
+
 ## Referrer:
 [Giới thiệu về ReactJS - Phần I (Các khái niệm cơ bản)](https://viblo.asia/p/gioi-thieu-ve-reactjs-phan-i-cac-khai-niem-co-ban-V3m5WzjblO7)
+
+[ReactJS Documents](https://reactjs.org/docs/hello-world.html)
+
