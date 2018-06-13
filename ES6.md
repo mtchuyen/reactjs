@@ -43,3 +43,6 @@ Khi tải trang, thư viện ***Babel*** sẽ chuyển đổi mã lệnh viết 
 ##Referrer:
 
 [Tìm Hiểu cơ bản về ES6](https://viblo.asia/p/tim-hieu-co-ban-ve-es6-DKBedxBZedX)
+
+[Babel Là Gì và Sử Dụng Babel Như Thế Nào](https://www.codehub.vn/Babel-La-Gi-va-Su-Dung-Babel-Nhu-The-Nao)
+
