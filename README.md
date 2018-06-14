@@ -9,6 +9,12 @@ React là một thư viện UI phát triển tại Facebook để hỗ trợ vi�
 
 Một trong những điểm hấp dẫn của React là thư viện này không chỉ hoạt động trên phía client, mà còn được render trên server và có thể kết nối với nhau. React so sánh sự thay đổi giữa các giá trị của lần render này với lần render trước và cập nhật ít thay đổi nhất trên DOM.
 
+***Mô hình hoạt động của ReactJs:*** thực ra thì ReactJS hoạt động theo mô hình MVVM (Model-View-View-Model). Tức là có bất kỳ sự thay đổi nào từ model nó sẽ lập tức thay đổi ở view và ngược lại.
+
+***Cách thức hoạt động của ReactJs:*** ReactJs hoạt động theo 2 cách:
+- 1, Là khi user gửi request lên server -> server nhận request -> xử lý request bằng PHP/ROR/Nodejs.. -> trả về Client code ReactJS -> Lúc này ReactJS sẽ chạy code và render ra những gì mà server gửi ra.
+- 2,Là khi user gửi request lên server -> server nhận request -> xử lý request bằng PHP/ROR/Nodejs..-> lúc này ReactJS sẽ nhận dữ liệu và render ra html -> gửi về client.
+
 ## Khái niệm cơ bản
 
 ### Virtual DOM:
@@ -31,9 +37,16 @@ State: thể hiện trạng thái của ứng dụng, khi state thay đồi thì
 
 ### Components:
 
-React được xây dựng xung quanh các component, chứ không dùng template như các framework khác.
+React được xây dựng xung quanh các component, chứ không dùng template như các framework khác. Mọi thứ React đều là component. Chúng giúp bảo trì mã code khi làm việc với các dự án lớn.
 
-Trong React, chúng ta xây dựng trang web sử dụng những thành phần (component) nhỏ. Chúng ta có thể tái sử dụng một component ở nhiều nơi, với các trạng thái hoặc các thuộc tính khác nhau, trong một component lại có thể chứa thành phần khác. Mỗi component trong React có một trạng thái riêng, có thể thay đổi, và React sẽ thực hiện cập nhật component dựa trên những thay đổi của trạng thái. Mọi thứ React đều là component. Chúng giúp bảo trì mã code khi làm việc với các dự án lớn. Một react component đơn giản chỉ cần một method render. Có rất nhiều methods khả dụng khác, nhưng render là method chủ đạo.
+Trong React, chúng ta xây dựng trang web sử dụng những thành phần (component) nhỏ.
+
+Chúng ta có thể tái sử dụng một component ở nhiều nơi, với các trạng thái hoặc các thuộc tính khác nhau, trong một component lại có thể chứa thành phần khác.
+
+Mỗi component trong React có một trạng thái riêng, có thể thay đổi, và React sẽ thực hiện cập nhật component dựa trên những thay đổi của trạng thái.
+
+Một react component đơn giản chỉ cần một method render. Có rất nhiều methods khả dụng khác, nhưng render là method chủ đạo.
+
 
 ### JSX
 
