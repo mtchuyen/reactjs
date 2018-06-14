@@ -36,6 +36,8 @@ Trong *demo2* thì sử dụng thuần của reactjs: React sẽ thực hiện c
 
 ### 2, Component 
 
+Bạn có thể tạo ra một component bằng các gọi phương thức `createClass` của đối tượng React, điểm bắt đầu khi tiếp cận với thư viện này.
+
 Component ta sẽ thực hiện khai báo như sau:
 
 ```
@@ -54,10 +56,27 @@ OR
 
 - ReactDOM.render(<Demo></Demo>, document.getElementById("demo"));
 
-Lưu ý: Khi sửa dụng render React. bắt buộc phải tồn tại 1 thành phần cha bao các thành phần con còn lại. Nếu không React sẽ không chạy.
+*Lưu ý:* Khi sửa dụng render React. bắt buộc phải tồn tại 1 thành phần cha bao các thành phần con còn lại. Nếu không React sẽ không chạy.
 
+```
+var Button = React.createClass({
+    render: function(){
+        return (
+            <input type="submit" />
+        );
+    }
+});
+```
+
+Phương thức `createClass` nhận vào một tham số, là đối tượng mô tả đặc tính của component. Đối tượng này bao gồm tất cả các phương thức để hình thành nên component. Phương thức quan trọng nhất là render, phương thức này được trigger khi component đã sẵn sàng để được render lên trên page.
+
+Trong hàm đó, bạn sẽ trả về một mô tả cho việc bạn muốn React render cái gì lên trên page. Như trong ví dụ ở trên, đơn giản tôi muốn render một button.
+
+Chú ý: Hàm render chính là mô tả cụ thể của UI tại bất cứ thời điểm nào. Vì thế nếu dữ liệu thay đổi, React sẽ take care việc update UI với dữ liệu tương ứng. Các bạn có thể hiểu đơn giản là, khi dữ liệu thay đổi, React sẽ tự động gọi hàm render để update lại UI.
 
 ### 3, Component lồng nhau:
+
+Nếu bạn muốn lồng nhiều component vào nhau, bạn sẽ làm điều này trong lệnh return của phương thức render.
 
 ```
 var Test = React.createClass({
@@ -78,6 +97,7 @@ var Demo = React.createClass({
         );
     }
 });
+React.render(<Demo />,  document.getElementById("app"));
 ```
 
 ### 4, Props
@@ -116,5 +136,12 @@ var Demo = React.createClass({
     }
 });
 ```
+
+
+## Referrer
+
+[Demo React JS Trên Client](https://viblo.asia/p/demo-react-js-tren-client-3P0lPO1pZox)
+
+[Học ReactJS trong 15 phút (Phần 1)](https://kipalog.com/posts/Hoc-ReactJS-trong-15-phut--Phan-1)
 
 
