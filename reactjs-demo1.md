@@ -36,6 +36,46 @@ Trong *demo2* thì sử dụng thuần của reactjs: React sẽ thực hiện c
 
 ### 2, Component 
 
+Hãy tạo một component có tên là Hello.
+
+```
+class Hello extends React.Component {
+    render() {
+        return <h1>Hello my friend!</h1>;
+    }
+}
+```
+Sau đó bạn định nghĩa các methods cho component. Trong ví dụ của chúng ta, chỉ có một method và được gọi là `render()`.
+
+Trong hàm `render()` sẽ trả về những gì mà bạn muốn hiển thị trên trang. Trong trường hợp trên, chúng ta muốn nó hiển thị một thẻ `h1` với text `Hello my friend!`
+
+Để ứng dụng của chúng ta hiển thị trên màn hình, chúng tôi cần phải sử dụng `ReactDOM.render()`:
+
+```
+ReactDOM.render(
+    <Hello />, 
+    document.getElementById("root")
+);
+```
+Đầy đủ code trong thẻ tab `<body></body>` như sau:
+
+```
+<div id="demo4">
+    <script type="text/babel">
+        class Hello extends React.Component {
+            render() {
+                return <h1>Hello my friend!</h1>;
+            }
+        }
+        ReactDOM.render(
+                <Hello />,
+                document.getElementById("demo4")
+        );
+
+    </script>
+</div>
+```
+
 Bạn có thể tạo ra một component bằng các gọi phương thức `createClass` của đối tượng React, điểm bắt đầu khi tiếp cận với thư viện này.
 
 Component ta sẽ thực hiện khai báo như sau:
@@ -161,5 +201,7 @@ Viết 1 button trong component Demo với event onClick sẽ thực hiện gọ
 [Demo React JS Trên Client](https://viblo.asia/p/demo-react-js-tren-client-3P0lPO1pZox)
 
 [Học ReactJS trong 15 phút (Phần 1)](https://kipalog.com/posts/Hoc-ReactJS-trong-15-phut--Phan-1)
+
+[Học React.js trong 5 phút!](https://viblo.asia/p/hoc-reactjs-trong-5-phut-E375zRwq5GW)
 
 
