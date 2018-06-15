@@ -29,11 +29,6 @@ React sử dụng cơ chế one-way data binding – luồng dữ liệu 1 chi�
 
 Với các đặc điểm ở trên, React dùng để xây dựng các ứng dụng lớn mà dữ liệu của chúng thay đổi liên tục theo thời gian. 
 
-### Props và State:
-
-Props: giúp các component tương tác với nhau, component nhận input gọi là props, và trả thuộc tính mô tả những gì component con sẽ render. Prop là bất biến.
-
-State: thể hiện trạng thái của ứng dụng, khi state thay đồi thì component đồng thời render lại để cập nhật UI.
 
 ### Components:
 
@@ -46,6 +41,23 @@ Chúng ta có thể tái sử dụng một component ở nhiều nơi, với cá
 Mỗi component trong React có một trạng thái riêng, có thể thay đổi, và React sẽ thực hiện cập nhật component dựa trên những thay đổi của trạng thái.
 
 Một react component đơn giản chỉ cần một method render. Có rất nhiều methods khả dụng khác, nhưng render là method chủ đạo.
+
+
+### Props và State:
+
+Có hai kiểu của data trong React đó là props và state. Sự khác biệt giữa hai kiểu thì hơi khó khăn để hiểu ngay từ ban đầu, ít nhất là về mặt khái niêm. Nhưng một khi bạn bắt đầu code, bạn sẽ nhanh chóng tách biệt được hai loại.
+
+- Props: giúp các component tương tác với nhau, component nhận input gọi là props, và trả thuộc tính mô tả những gì component con sẽ render. Prop là bất biến.
+
+- State: thể hiện trạng thái của ứng dụng, khi state thay đồi thì component đồng thời render lại để cập nhật UI.
+
+Điểm mấu chốt của sự khác nhau là:
+
+- State thì private và chỉ có thể được thay đổi bên trong bản thân component.
+- Props thì mang tính external, và không bị kiểm soát bởi bản thân component.
+> Nó được truyền từ component cao hơn theo phân cấp, hay có thể hiểu đơn giản là truyền từ component cha xuống component con, cái mà điều khiển dữ liệu trước khi truyền xuống.
+
+Vì thế trong khi một component không thể thay đổi props của nó một cách trức tiếp (điều này có thể làm một cách gián tiếp nhưng hãy để nó vào những phần sau), thì nó có thể tự thay đổi state của bản thân.
 
 
 ### JSX
@@ -113,4 +125,6 @@ Khi chạy file này (mã html) bằng browser, đầu tiên sẽ xuất hiện 
 [Giới thiệu về ReactJS - Phần I (Các khái niệm cơ bản)](https://viblo.asia/p/gioi-thieu-ve-reactjs-phan-i-cac-khai-niem-co-ban-V3m5WzjblO7)
 
 [ReactJS Documents](https://reactjs.org/docs/hello-world.html)
+
+[Học ReactJS trong 15 phút (Phần 2)](https://kipalog.com/posts/Hoc-ReactJS-trong-15-phut--Phan-2)
 
