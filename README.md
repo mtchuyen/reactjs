@@ -52,6 +52,9 @@ Một react component đơn giản chỉ cần một method render. Có rất nh
 
 JSX là một dạng ngôn ngữ cho phép viết các mã HTML trong Javascript.
 
+JSX là viết tắt của  Javascript Syntax Extension. Đây đơn giản là một syntax extension của Javascript. Với nó bạn có thể viết Javascript với những tag giống như XML (XML-like). Về bản chất, các tag thực sự là những lời gọi hàm, sẽ được chuyển đổi trong React code và end up dưới dạng HTML và Javascript trong cây DOM.
+
+
 ***Đặc điểm:***
 
 - Faster: Nhanh hơn.
