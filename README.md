@@ -1,5 +1,8 @@
 # reactjs
+
 learn reactjs
+
+React (còn được gọi là Reactjs hay React.js) là một Thư viện javascript được tạo ra bởi sự cộng tác giữa Facebook và Instagram.
 
 ## Giới thiệu
 
@@ -9,11 +12,22 @@ React là một thư viện UI phát triển tại Facebook để hỗ trợ vi�
 
 Một trong những điểm hấp dẫn của React là thư viện này không chỉ hoạt động trên phía client, mà còn được render trên server và có thể kết nối với nhau. React so sánh sự thay đổi giữa các giá trị của lần render này với lần render trước và cập nhật ít thay đổi nhất trên DOM.
 
-***Mô hình hoạt động của ReactJs:*** thực ra thì ReactJS hoạt động theo mô hình MVVM (Model-View-View-Model). Tức là có bất kỳ sự thay đổi nào từ model nó sẽ lập tức thay đổi ở view và ngược lại.
+### Mô hình hoạt động của ReactJs:
+thực ra thì ReactJS hoạt động theo mô hình MVVM (Model-View-View-Model). Tức là có bất kỳ sự thay đổi nào từ model nó sẽ lập tức thay đổi ở view và ngược lại.
 
-***Cách thức hoạt động của ReactJs:*** ReactJs hoạt động theo 2 cách:
+Phần Views của Reactjs thường được hiển thị bằng việc chủ yếu dung các component mà chứa các component cụ thể hoặc các thẻ HTML. 
+
+
+### Cách thức hoạt động của ReactJs:
+
+Một trong những đặc trưng của Reactjs là việc render dữ liệu không những có thể thực hiện ở tầng server mà còn ở tầng client.
+
+ReactJs hoạt động theo 2 cách:
 - 1, Là khi user gửi request lên server -> server nhận request -> xử lý request bằng PHP/ROR/Nodejs.. -> trả về Client code ReactJS -> Lúc này ReactJS sẽ chạy code và render ra những gì mà server gửi ra.
 - 2,Là khi user gửi request lên server -> server nhận request -> xử lý request bằng PHP/ROR/Nodejs..-> lúc này ReactJS sẽ nhận dữ liệu và render ra html -> gửi về client.
+
+> Render tầng server: Một trong những vấn đề với các ứng dụng đơn trang là tối ưu SEO và thời gian tải trang. Nếu tất cả việc xây dựng và hiển thị trang đều thực hiện ở client, thì người dung sẽ phải chờ cho trang được khởi tạo và hiển thị lên. Điều này thực tế là chậm. Hoặc nếu giả sử người dung vô hiệu hóa Javascript thì sao? Reactjs là một thư viện component, nó có thể vừa render ở ngoài trình duyệt sử dụng DOM và cũng có thể render bằng các chuỗi HTML mà server trả về. Bạn có thể tham khảo cách render side servering tại đây: [React.js : Server side rendering](https://crypt.codemancers.com/posts/2016-09-16-react-server-side-rendering/)
+
 
 ## Khái niệm cơ bản
 
@@ -21,11 +35,14 @@ Một trong những điểm hấp dẫn của React là thư viện này không 
 
 Công nghệ DOM ảo giúp tăng hiệu năng cho ứng dụng.
 
-Việc chỉ node gốc mới có trạng thái và khi nó thay đổi sẽ tái cấu trúc lại toàn bộ, đồng nghĩa với việc DOM tree cũng sẽ phải thay đổi một phần, điều này sẽ ảnh hưởng đến tốc độ xử lý.
+> Virtual DOM tạo ra bản cache cấu trúc dữ liệu của ứng dụng trên bộ nhớ. Sau đó, ở mỗi vòng lặp, nó liệt kê những thay đổi và sau đó là cập nhật lại sự thay đổi trên DOM của trình duyệt một cách hiệu quả. Điều này cho phép ta viết các đoạn code như thể toàn bộ trang được render lại dù thực tế là Reactjs chỉ render những component hay subcomponent nào thực sự thay đổi.
 
-ReactJS sử dụng Virtual DOM (DOM ảo) để cải thiện vấn đề này. Virtual DOM là một object Javascript, mỗi object chứa đầy đủ thông tin cần thiết để tạo ra một DOM, khi dữ liệu thay đổi nó sẽ tính toán sự thay đổi giữa object và tree thật, điều này sẽ giúp tối ưu hoá việc re-render DOM tree thật.
+Việc chỉ node gốc mới có trạng thái và khi nó thay đổi sẽ tái cấu trúc lại toàn bộ, đồng nghĩa với việc DOM tree cũng sẽ phải thay đổi một phần, điều này sẽ ảnh hưởng đến tốc độ xử lý. ReactJS sử dụng Virtual DOM (DOM ảo) để cải thiện vấn đề này. Virtual DOM là một object Javascript, mỗi object chứa đầy đủ thông tin cần thiết để tạo ra một DOM, khi dữ liệu thay đổi nó sẽ tính toán sự thay đổi giữa object và tree thật, điều này sẽ giúp tối ưu hoá việc re-render DOM tree thật.
 
 React sử dụng cơ chế one-way data binding – luồng dữ liệu 1 chiều. Dữ liệu được truyền từ parent đến child thông qua props. Luồng dữ liệu đơn giản giúp chúng ta dễ dàng kiểm soát cũng như sửa lỗi.
+
+> Reactjs tạo ra cho chính nó DOM ảo – nơi mà các component thực sự tồn tại trên đó. Reactjs tính toán những thay đổi nào cần cập nhật lên DOM và chỉ thực hiện chúng. 
+
 
 Với các đặc điểm ở trên, React dùng để xây dựng các ứng dụng lớn mà dữ liệu của chúng thay đổi liên tục theo thời gian. 
 
@@ -83,7 +100,7 @@ JSX là viết tắt của  Javascript Syntax Extension. Đây đơn giản l�
 
 ## helloworld với reactjs
 
-reactjs cần đến 2 thằng file chính: "react" vs "react-dom". Và một trình biên dịch mã giúp bạn viết ngắn gọn code hơn đó là "babel".
+reactjs cần đến 2 thư viện chính: "react" vs "react-dom". Và một trình biên dịch mã giúp bạn viết ngắn gọn code hơn đó là "babel".
 
 ```html
 <!DOCTYPE html>
@@ -120,6 +137,10 @@ reactjs cần đến 2 thằng file chính: "react" vs "react-dom". Và một tr
 </html>
 ```
 Khi chạy file này (mã html) bằng browser, đầu tiên sẽ xuất hiện đoạn text ***Hello, world!***, sau đó 1s hàm `setInterval` sẽ render lại content của page (thể hiện thời gian)
+
+- Thẻ `<div>` với id là `#root`: Đây là entry point cho ứng dụng. Đây là nơi (phạm vi) toàn bộ ứng dụng sẽ hoạt động.
+- Thẻ `<script type="text/babel">` trong body: Đây là chỗ chúng ta sẽ viết code React.js.
+
 
 ## Referrer:
 [Giới thiệu về ReactJS - Phần I (Các khái niệm cơ bản)](https://viblo.asia/p/gioi-thieu-ve-reactjs-phan-i-cac-khai-niem-co-ban-V3m5WzjblO7)
