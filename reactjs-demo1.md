@@ -137,6 +137,24 @@ var Demo = React.createClass({
 });
 ```
 
+### 5, State
+Trái ngược với Props, State lại có thể thay đổi được. Ta có thể hiểu Props là thuộc tính thì State chính là trạng thái của nó Ta sẽ init 1 state và new 1 function addString nhằm nuối chuỗi khi thực hiện click button
+
+```
+getInitialState(){
+    return {str: "Test state"};
+},
+addString(){
+    this.setState({str: this.state.str + 1});
+},
+```
+
+Viết 1 button trong component Demo với event onClick sẽ thực hiện gọi hàm addString trong cùng component
+
+```
+<button onClick={this.addString}>button</button>
+```
+
 
 ## Referrer
 
