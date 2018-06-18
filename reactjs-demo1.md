@@ -5,7 +5,7 @@ lear reactjs
 ## Step
 
 ### 1, Nhúng thư viện ReactJS vào html
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +38,7 @@ Trong *demo2* thì sử dụng thuần của reactjs: React sẽ thực hiện c
 
 Hãy tạo một component có tên là Hello.
 
-```
+```javascript
 class Hello extends React.Component {
     render() {
         return <h1>Hello my friend!</h1>;
@@ -51,7 +51,7 @@ Trong hàm `render()` sẽ trả về những gì mà bạn muốn hiển thị 
 
 Để ứng dụng của chúng ta hiển thị trên màn hình, chúng tôi cần phải sử dụng `ReactDOM.render()`:
 
-```
+```javascript
 ReactDOM.render(
     <Hello />, 
     document.getElementById("root")
@@ -59,7 +59,7 @@ ReactDOM.render(
 ```
 Đầy đủ code trong thẻ tab `<body></body>` như sau:
 
-```
+```javascript
 <div id="demo4">
     <script type="text/babel">
         class Hello extends React.Component {
@@ -80,7 +80,7 @@ Bạn có thể tạo ra một component bằng các gọi phương thức `crea
 
 Component ta sẽ thực hiện khai báo như sau:
 
-```
+```javascript
 var Demo = React.createClass({
     render: function(){
         return(
@@ -98,7 +98,7 @@ OR
 
 *Lưu ý:* Khi sửa dụng render React. bắt buộc phải tồn tại 1 thành phần cha bao các thành phần con còn lại. Nếu không React sẽ không chạy.
 
-```
+```javascript
 var Button = React.createClass({
     render: function(){
         return (
@@ -118,7 +118,7 @@ Chú ý: Hàm render chính là mô tả cụ thể của UI tại bất cứ th
 
 Nếu bạn muốn lồng nhiều component vào nhau, bạn sẽ làm điều này trong lệnh return của phương thức render.
 
-```
+```javascript
 var Test = React.createClass({
     render: function(){
         return(
@@ -155,7 +155,7 @@ Một khi `App` component được cài đặt như thế này, nó có thể tr
 
 Tuy nhiên, nó không thể trực tiếp thay đổi dữ liệu. Từ góc nhìn của component, props của nó là bất biến (immutable). Nó chỉ là thông tin được cài đặt cho component.
 
-```js
+```javascript
 var text = "Click the button";
 
 var Form = React.createClass({
@@ -194,7 +194,7 @@ ReactDOM.render(<Demo demoprop="Demo Prop">Test props children</Demo>,
 ```
 Component:
 
-```
+```javascript
 var Demo = React.createClass({
     render: function(){
         return(
@@ -220,17 +220,17 @@ Vì thế nếu bạn muốn dữ liệu trong ứng dụng thay đổi, ví d�
 
 ***Cài đặt state***
 
-Để cài đặt state, đơn giản chúng ta cài đặt hàm getInitialState() vào component, và trả về bất cứ gì bạn muốn cài đặt trong state của component đó.
+Để cài đặt state, đơn giản chúng ta cài đặt hàm `getInitialState()` vào component, và trả về bất cứ gì bạn muốn cài đặt trong state của component đó.
 
 ***Thay đổi state***
 
-Để thay đổi state, đơn giản ta gọi hàm this.setState(), và truyền vào state mới như là một tham số.
+Để thay đổi state, đơn giản ta gọi hàm `this.setState()`, và truyền vào state mới như là một tham số.
 
 
 
 Ta sẽ init 1 state và new 1 function addString nhằm nuối chuỗi khi thực hiện click button
 
-```
+```javascript
 getInitialState(){
     return {str: "Test state"};
 },
