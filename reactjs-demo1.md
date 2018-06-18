@@ -144,16 +144,47 @@ React.render(<Demo />,  document.getElementById("app"));
 
 ***Props*** là thuộc tính dành cho 1 component và có thể tồn tại nhiều props
 
+Cách để đưa props vào một component nhìn rất giống cách mà chúng ta khai báo attribute cho một HTML element.
+
+```javascript
+<App text={text} />
 ```
-ReactDOM.render(<Demo demoprop="Demo Prop" />, document.getElementById("demo"));
-```
-Chúng ta sẽ triệu gọi props vào component
+Lý do chúng ta sử dụng cặp ngoặc nhọn `{}` là vì chúng ta cần nói cho JSX biết rằng đó là một Javascript expression.
+
+Một khi `App` component được cài đặt như thế này, nó có thể truy xuất vào biến text mà ta đã khai báo ở trên thông qua lời gọi `this.props.text`.
+
+Tuy nhiên, nó không thể trực tiếp thay đổi dữ liệu. Từ góc nhìn của component, props của nó là bất biến (immutable). Nó chỉ là thông tin được cài đặt cho component.
+
+```js
+var text = "Click the button";
+
+var Form = React.createClass({
+    render: function(){
+        return (
+            <div>
+                <h3>{this.props.text}</h3>
+                <input type="submit" />
+            </div>
+        );
+    }
+});
+var App = React.createClass({
+    render: function(){
+        return (
+            <div>
+                <h1> Welcome to my app!</h1>
+                <Form text={this.props.text}/>
+            </div>
+        );
+    }
+});
+ReactDOM.render(<App text={text}/>,  document.getElementById("app"));
 
 ```
-<h1 className= "abc">Demo ReactJs {this.props.demoprop}</h1>
-```
 
-Ta sửa dụng cặp {} để thực hiện gọi các function trong đó
+***props*** được truyền vào trong `App` component trong phương thức `ReactDOM.render()`. Sau đó `App` component có thể truy xuất biến `text` thông qua lời gọi `this.props.text`. Nó cũng có thể truyền dữ liệu xuống component con của nó như chúng ta thấy cách mà `Form` component được `App` component cài đặt props trong ví dụ.
+
+Khi dữ liệu đến được `Form` component, chúng ta thấy đây là điểm kết thúc, dữ liệu sẽ được render ra thẻ `h3` như trên.
 
 
 ***Props children***:
@@ -178,7 +209,26 @@ var Demo = React.createClass({
 ```
 
 ### 5, State
-Trái ngược với Props, State lại có thể thay đổi được. Ta có thể hiểu Props là thuộc tính thì State chính là trạng thái của nó Ta sẽ init 1 state và new 1 function addString nhằm nuối chuỗi khi thực hiện click button
+
+Một cách khác để storing dữ liệu trong React là state. Không giống như `props` (bất biến dưỡi góc nhìn của component), state có thể thay đổi (mutable).
+
+Ta có thể hiểu ***Props*** là thuộc tính thì ***State*** chính là trạng thái của nó.
+
+Vì thế nếu bạn muốn dữ liệu trong ứng dụng thay đổi, ví dụ như dựa trên tương tác người dùng, thì dữ liệu phải được lưu trữ trong component state.
+
+***State*** là private và được quản lý bởi chỉ duy nhất một component, nó không thể truyền xuống cho component con. Nếu bạn muốn truyền xuống cho component con thì bạn phải truyền nó như là một props.
+
+***Cài đặt state***
+
+Để cài đặt state, đơn giản chúng ta cài đặt hàm getInitialState() vào component, và trả về bất cứ gì bạn muốn cài đặt trong state của component đó.
+
+***Thay đổi state***
+
+Để thay đổi state, đơn giản ta gọi hàm this.setState(), và truyền vào state mới như là một tham số.
+
+
+
+Ta sẽ init 1 state và new 1 function addString nhằm nuối chuỗi khi thực hiện click button
 
 ```
 getInitialState(){
