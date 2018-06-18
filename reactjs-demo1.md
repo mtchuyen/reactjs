@@ -290,6 +290,10 @@ Bạn nên cố gắng giữ số lượng các stateful component ít nhất c�
 - Hoặc là những component là chủ sở hữu chung hoặc là những component nằm trên hệ thống phân cấp sẽ nên giữ state.
 - Nếu bạn không thể tìm ra component nào phù hợp, hãy tạo một component mới đơn giản giữ nhiệm vụ lưu trữ state và đặt nó đâu đó nằm bên trên các component là chủ sở hữu chung trong hệ thống phân cấp.
 
+### 6, Data Flow
+
+Đọc tiếp: [Học ReactJS trong 15 phút (Phần cuối)](https://kipalog.com/posts/Hoc-ReactJS-trong-15-phut--Phan-cuoi)
+
 
 ## Referrer
 
