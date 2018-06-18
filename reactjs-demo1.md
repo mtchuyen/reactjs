@@ -156,7 +156,7 @@ Một khi `App` component được cài đặt như thế này, nó có thể tr
 Tuy nhiên, nó không thể trực tiếp thay đổi dữ liệu. Từ góc nhìn của component, props của nó là bất biến (immutable). Nó chỉ là thông tin được cài đặt cho component.
 
 ```javascript
-var text = "Click the button";
+var textBt = "Click the button";
 
 var Form = React.createClass({
     render: function(){
@@ -178,7 +178,7 @@ var App = React.createClass({
         );
     }
 });
-ReactDOM.render(<App text={text}/>,  document.getElementById("app"));
+ReactDOM.render(<App text={textBt}/>,  document.getElementById("app"));
 
 ```
 
@@ -244,6 +244,51 @@ Viết 1 button trong component Demo với event onClick sẽ thực hiện gọ
 ```
 <button onClick={this.addString}>button</button>
 ```
+
+```javascript
+var App = React.createClass({
+    getInitialState: function(){
+        return {
+            active: true
+        }
+    },
+    handleClick: function(){
+        this.setState({
+            active: !this.state.active
+        });
+    },
+    render: function(){
+        var buttonSwitch = this.state.active ? "On" : "Off";
+        return (
+            <div>
+                <p>Click the button!</p>
+                <input type="submit" onClick={this.handleClick} />
+                <p>{buttonSwitch}</p>
+            </div>
+        );
+    }
+});
+
+React.render(<App />,  document.getElementById("app"));
+```
+
+Chúng ta hook một event listener vào trong button, ở trên là `onClick`. Khi nó được trigger, chúng ta gọi hàm `handleClick`, cái mà đã được cài đặt trước đó, và luôn sẵn sàng được gọi thông qua từ khóa `this`.
+
+Trong hàm `handleClick`, chúng ta gọi `this.setState()`, cái mà sẽ thay đổi trạng thái của component.
+
+
+***Chúng ta nên giữ state ở đâu?***
+
+Bạn nên cố gắng giữ số lượng các stateful component ít nhất có thể, và thậm chí giữ tối thiểu lượng dữ liệu trong state. Nếu component cấp dưới cần truy xuất dữ liệu từ state, thì hãy truyền nó thông qua props.
+
+> Stateful component thì luôn luôn là higher level, trong khi Stateless component thường là lower level trong hệ thống phân cấp.
+
+Để hình dung việc state được giữ ở đâu, bạn hãy hỏi bản thân một vài câu hỏi, những câu hỏi này được lấy từ React docs:
+
+- Xác định mỗi component mà render thông tin gì đó dựa trên state.
+- Tìm một component mà nó chủ sở hữu chung của các component khác (một component nằm bên trên tất cả các component khác trong hệ thống phân cấp thì cần có state)
+- Hoặc là những component là chủ sở hữu chung hoặc là những component nằm trên hệ thống phân cấp sẽ nên giữ state.
+- Nếu bạn không thể tìm ra component nào phù hợp, hãy tạo một component mới đơn giản giữ nhiệm vụ lưu trữ state và đặt nó đâu đó nằm bên trên các component là chủ sở hữu chung trong hệ thống phân cấp.
 
 
 ## Referrer
