@@ -6,7 +6,7 @@ learn reactjs
 
 - JSX = Javascript + XML
 - Nó là phần mở rộng của javascript nhưng có cú pháp viết như xml
--JSX không phải một ngôn ngữ template, JSX chỉ đơn giản là một cú pháp thay thế JavaScript, mặc dù cú pháp đó là đặc trưng của React
+- JSX không phải một ngôn ngữ template, JSX chỉ đơn giản là một cú pháp thay thế JavaScript, mặc dù cú pháp đó là đặc trưng của React
 
 ## JSX Elements
 
@@ -47,6 +47,28 @@ hay:
 );
 ```
 2 element ngang hàng nhưng không có element nào bao cả 2 cái.
+
+### Render element
+`ReactDOM.render()` là cách phổ biến nhất để render ra JSX.
+
+- Tham số đầu tiên là một JSX expression. Nó sẽ tạo ra một cây tương ứng với node DOM, sau đó thêm cây này vào DOM.
+- Tham số thứ 2 sẽ là nơi mà bạn muốn tham số đầu tiên được xuất hiện.
+
+Ví dụ:
+```javascript
+ReactDOM.render(<h1>Hello world</h1>, document.getElementById('app'));
+```
+
+Một điều đặc biệt về `ReactDOM.render()` đó là nó chỉ cập nhật những thành phần DOM có sự thay đổi. Nghĩa là nếu bạn gọi hàm render 2 lần mà không có sự thay đổi gì cả, thì hàm render thứ 2 sẽ không làm gì cả
+```javascript
+const hello = <h1>Hello world</h1>;
+// This will add "Hello world" to the screen:
+ReactDOM.render(hello, document.getElementById('app'));
+
+// This won't do anything at all:
+ReactDOM.render(hello, document.getElementById('app'));
+```
+
 
 ## Referrel
 - [Basic ReactJs (P1)](https://viblo.asia/p/basic-reactjs-p1-4dbZNDdq5YM)
